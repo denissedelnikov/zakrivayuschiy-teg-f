@@ -9,3 +9,88 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+:root {
+  --color-black-animated: #000;
+  --color-red-animated: #ff0000;
+}
+.like-icon {
+  & .core {
+    transition: fill linear 0.3s 0.03s;
+  }
+
+  & .main-body {
+    transition: fill linear 0.3s;
+  }
+
+  & .contour {
+    transition: fill linear 0.1s;
+  }
+
+  & .sparks {
+    opacity: 0;
+  }
+}
+
+.like-icon:hover {
+  & .core {
+    transition-duration: none;
+    fill: var(--color-black-animated);
+  }
+
+  & .main-body {
+    transition-duration: 0.05s;
+    fill: var(--color-black-animated);
+  }
+}
+
+.like-icon:active {
+  & .core {
+    transition-duration: none;
+    fill: var(--color-red-animated);
+  }
+
+  & .main-body {
+    transition-duration: 0.05s;
+    fill: var(--color-red-animated);
+  }
+}
+
+.like-icon.is-liked {
+  & .contour {
+    transition-duration: 0.3s;
+    transition-delay: 0.06s;
+  }
+  & .core {
+    transition-duration: none;
+    fill: var(--color-red-animated);
+  }
+
+  & .main-body {
+    transition-duration: 0.05s;
+    fill: var(--color-red-animated);
+  }
+
+  & .sparks {
+    animation: flash-sparks 0.3s ease-in 0.3s;
+  }
+
+  & .heart {
+    transform-origin: center;
+    animation: scale-heart 0.3s ease-in 0.1s;
+  }
+}
+
+@keyframes scale-heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes flash-sparks {
+  to {
+    opacity: 1;
+  }
+}

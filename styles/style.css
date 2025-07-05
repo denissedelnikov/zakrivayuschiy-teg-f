@@ -1,14 +1,8 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
 
 .page {
   min-inline-size: 320px;
@@ -37,7 +31,11 @@
   padding-block: var(--padding-block-header);
 }
 
-.logotype {
+.main {
+  padding-block-end: 103px;
+}
+
+.header__title {
   font-family: var(--accent-text, fantasy);
   vertical-align: bottom;
   text-transform: uppercase;
@@ -58,19 +56,15 @@
   margin-block-start: 20px;
 }
 
-.main {
-  padding-inline: var(--padding-inline-main-content);
-}
-
 .section {
   border: var(--main-value-border);
   padding-block-end: 25px;
   margin-block-end: 50px;
   background: var(--color-white);
-  overflow: hidden;
 }
 
 .section__title {
+  display: block;
   font-family: inherit;
   font-size: inherit;
   line-height: 31px;
@@ -80,9 +74,16 @@
 
 .section__img {
   position: relative;
-  block-size: var(--wdht-hght-section-img);
-  inline-size: var(--wdht-hght-section-img);
-  border-block: var(--main-value-border);
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  border-block-start: var(--main-value-border);
+}
+
+.section__img-item {
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }
 
 .section__label {
@@ -112,6 +113,8 @@
   line-height: 21px;
   padding-block: 24px;
   padding-inline: 25px;
+  margin-block-start: -5px;
+  border-block-start: var(--main-value-border);
 }
 
 .section__descriprion > p:not(:last-child) {
@@ -175,7 +178,8 @@
   white-space: nowrap;
 }
 
-.card__icon-button:focus {
+.card__icon-button:focus,
+.button__text:focus {
   outline: none;
 }
 
@@ -219,15 +223,34 @@
   padding-inline: var(--padding-modal);
   padding-block: var(--padding-modal);
   border: var(--main-value-border);
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content;
-  column-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-save-memory__content {
+  display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.modal-save-memory__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--accent-text, fantasy);
+  font-size: var(--font-size-small-text);
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.modal-save-memory__text > span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .modal-save-memory::backdrop {
-  background-color: rgb(0 0 0 / 0.5);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .save-image-floppy {
@@ -238,19 +261,12 @@
 
 .save-memory-button {
   border: var(--main-value-border);
-  grid-column: span 2;
   inline-size: 100%;
   block-size: 38px;
   text-transform: uppercase;
-  align-self: end;
 }
 
-.modal-save-memory_text {
-  font-family: var(--accent-text, fantasy);
-  font-size: var(--font-size-small-text);
-  line-height: 21px;
-  inline-size: 198px;
-}
+
 
 .modal-save-memory-image-floppy {
   width: var(--size-modal-image-floppy);
@@ -258,6 +274,10 @@
 }
 
 @media (width <= 376px) {
+  .main {
+    padding-block-end: 100px;
+  }
+
   .section__title {
     line-height: 22px;
     margin-block: 3px;
@@ -279,7 +299,7 @@
     --wdth-modal: 341px;
     --hght-modal: 191px;
 
-    padding-inline: 42px;
+    padding-inline: 39px;
     padding-block: var(--padding-modal);
     padding-inline: var(--padding-modal-inline);
   }

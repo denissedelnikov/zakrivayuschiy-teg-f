@@ -9,17 +9,12 @@
   --font-size-small-text: 14px;
   --wght-normal-main-text: 400;
   --wght-bold-main-text: 700;
-  --wdth-for-main-content: clamp(23.1875rem, 15.9472rem + 30.892vw, 43.75rem);
+  --wdth-for-main-content: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   --padding-block-header: 100px;
   --font-size-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --font-size-descr: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --padding-block-logotype: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   --padding-inline-logotype: clamp(0.875rem, -1.5678rem + 10.4225vw, 7.8125rem);
-  --wdht-hght-section-img: clamp(
-    23.4375rem,
-    16.3072rem + 30.4225vw,
-    43.6875rem
-  );
   --main-value-border: 2px solid var(--color-blaсk);
   --wdth-save-button: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   --padding-modal: 30px;

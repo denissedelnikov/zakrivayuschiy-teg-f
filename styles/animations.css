@@ -59,6 +59,7 @@
   & .contour {
     transition-duration: 0.3s;
     transition-delay: 0.06s;
+    fill: var(--color-red-animated);
   }
   & .core {
     transition-duration: none;

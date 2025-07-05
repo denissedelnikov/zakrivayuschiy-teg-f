@@ -52,26 +52,20 @@ ol {
   white-space: nowrap;
 }
 
-img {
-  block-size: 100%;
-  inline-size: 100%;
-}
-
-
 .filter-contrast {
-    filter: contrast(20%);
+  filter: contrast(20%);
 }
 
 .filter-grayscale {
-    filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .filter-saturate {
-    filter: saturate(338%);
+  filter: saturate(338%);
 }
 
 .filter-sepia {
-    filter: sepia(80%);
+  filter: sepia(80%);
 }
 
 .filter-opacity {
@@ -87,5 +81,5 @@ img {
 }
 
 .filter-grayscale-contrast {
-    filter: grayscale(1) contrast(20%);;
+  filter: grayscale(1) contrast(20%);
 }

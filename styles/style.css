@@ -174,11 +174,6 @@
   white-space: nowrap;
 }
 
-.card__icon-button:focus,
-.card__like-button:focus {
-  outline: none;
-}
-
 .card__icon-button {
   padding: 0px;
   display: flex;
@@ -203,6 +198,7 @@
 }
 
 .button:focus {
+  outline: none;
   box-shadow: 2px 2px 0 0 #000;
 }
 
